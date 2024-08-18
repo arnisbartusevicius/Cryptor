@@ -1,0 +1,106 @@
+body {
+    background: linear-gradient(180deg, #000000, #000022);
+    margin: 0;
+    height: 100vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+nav, footer {
+    background-color: transparent;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
+}
+
+nav ul li.home {
+    position: absolute;
+    left: 20px;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.center-content h1 {
+    font-size: 60px;
+    margin: 0;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.center-content p {
+    opacity: 0;
+    font-size: 20px;
+    margin: 10px 0 0;
+    color: #b3b3b3;
+    animation: fadeIn 2s ease-in-out 2s forwards;
+    animation-delay: 2s;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
