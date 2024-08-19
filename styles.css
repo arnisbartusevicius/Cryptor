@@ -10,6 +10,7 @@ body {
     justify-content: center;
     position: relative;
     overflow-x: hidden;
+    transition: background 1s ease;
 }
 
 nav, footer {
@@ -66,8 +67,81 @@ nav ul li.home {
 
 .center-content {
     text-align: center;
+    transition: transform 1s ease;
 }
 
+.center-content h1 {
+    font-size: 60px;
+    margin: 0;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.center-content p {
+    opacity: 0;
+    font-size: 20px;
+    margin: 10px 0 0;
+    color: #b3b3b3;
+    animation: fadeIn 2s ease-in-out 2s forwards;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 100px;
+    border: 1px solid #007bff;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    margin-right: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 2s forwards;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeOut {
+    100% { opacity: 1; }
+    0% { opacity: 0; }
+}
 .center-content h1 {
     font-size: 60px;
     margin: 0;
@@ -100,7 +174,7 @@ footer a {
     text-decoration: none;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
 }

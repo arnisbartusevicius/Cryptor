@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Scramble "Crypt" whenever you hover mouse over
     const title = document.querySelector('.center-content h1');
     const originalText = title.textContent;
     const chars = '!<>-_\\/[]{}—=+*^?#________';
@@ -41,5 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
     // Reset on mouse leave
     title.addEventListener('mouseleave', () => {
         title.textContent = originalText;
+    });
+
+    // Fix event listener for navigation buttons
+    document.querySelectorAll("#navbutton a").forEach(function (navLink) {
+        navLink.addEventListener("click", function (event) {
+            // Prevent the default action (navigating to the page immediately)
+            event.preventDefault();
+
+            // Capture the href attribute
+            const targetUrl = event.currentTarget.href;
+
+            // Get all elements with the class 'center-content'
+            var elements = document.getElementsByClassName("center-content");
+
+            // Apply the fade-out class to all of them
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].classList.add("fade-out");
+            }
+
+            // After the transition ends (1 second), navigate to the new page
+            setTimeout(function () {
+                window.location.href = targetUrl;
+            }, 1000);  // 1000 ms matches the CSS transition duration
+        });
     });
 });
