@@ -1,7 +1,8 @@
 body {
     background: linear-gradient(180deg, #000000, #000022);
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    height: auto;
     color: white;
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -68,37 +69,8 @@ nav ul li.home {
 .center-content {
     text-align: center;
     transition: transform 1s ease;
-}
-
-.center-content h1 {
-    font-size: 60px;
-    margin: 0;
-    position: relative;
-    color: white;
-    overflow: hidden;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.center-content p {
-    opacity: 0;
-    font-size: 20px;
-    margin: 10px 0 0;
-    color: #b3b3b3;
-    animation: fadeIn 2s ease-in-out 2s forwards;
-}
-
-footer {
     width: 100%;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    position: absolute;
-    bottom: 0;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
+    max-width: 600px;
 }
 
 @keyframes fadeIn {
@@ -131,7 +103,7 @@ footer a {
 }
 
 html {
-    scroll-behavior: smooth;
+    -behavior: smooth;
 }
 
 @keyframes fadeIn {
@@ -160,15 +132,6 @@ html {
     animation-delay: 2s;
 }
 
-footer {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    position: absolute;
-    bottom: 0;
-}
-
 footer a {
     color: white;
     text-decoration: none;
@@ -177,4 +140,29 @@ footer a {
 .fade-out {
     opacity: 0;
     transition: opacity 1s ease-out;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
