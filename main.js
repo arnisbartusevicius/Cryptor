@@ -69,3 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.getElementById("encrypt-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    document.getElementById("encrypt").scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById("decrypt-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    document.getElementById("decrypt").scrollIntoView({ behavior: 'smooth' });
+});
