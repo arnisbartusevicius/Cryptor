@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // After the transition ends (1 second), navigate to the new page
             setTimeout(function () {
                 window.location.href = targetUrl;
-            }, 1000);  // 1000 ms matches the CSS transition duration
+            }, 1000);  // 1 sec matches the CSS transition duration
         });
     });
 });
@@ -77,4 +77,64 @@ document.getElementById("encrypt-btn").addEventListener("click", function (event
 document.getElementById("decrypt-btn").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default anchor behavior
     document.getElementById("decrypt").scrollIntoView({ behavior: 'smooth' });
+});
+
+// AUTOMATIC BUTTON (ENCRYPT)
+document.addEventListener("DOMContentLoaded", function () {
+    var automaticBtn = document.getElementById("automatic-btn");
+    var inputField = document.getElementById("auto-input");
+    var EncryptMainText = document.getElementById("encrypt-main-text");
+    var EncryptMainButtons = document.getElementById("encrypt-main-buttons");
+
+    automaticBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Toggle the visibility of the input field
+        if (inputField.classList.contains("hidden")) {
+            inputField.classList.remove("hidden");
+            inputField.classList.add("fade-in");
+
+            // Add fade-out effect to the main text and buttons
+            EncryptMainText.classList.add("fade-out");
+            EncryptMainButtons.classList.add("fade-out");
+
+            // Wait for 1 second before adding the hidden class
+            setTimeout(function () {
+                EncryptMainText.classList.add("hidden");
+                EncryptMainButtons.classList.add("hidden");
+            }, 1000); // 1 sec delay
+        } else {
+            inputField.classList.add("hidden");
+        }
+    });
+});
+
+// MANUAL BUTTON (ENCRYPT)
+document.addEventListener("DOMContentLoaded", function () {
+    var manualBtn = document.getElementById("manual-btn");
+    var inputField = document.getElementById("manual-input");
+    var EncryptMainText = document.getElementById("encrypt-main-text");
+    var EncryptMainButtons = document.getElementById("encrypt-main-buttons");
+
+    manualBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Toggle the visibility of the input field
+        if (inputField.classList.contains("hidden")) {
+            inputField.classList.remove("hidden");
+            inputField.classList.add("fade-in");
+
+            // Add fade-out effect to the main text and buttons
+            EncryptMainText.classList.add("fade-out");
+            EncryptMainButtons.classList.add("fade-out");
+
+            // Wait for 1 sec before adding the hidden class
+            setTimeout(function () {
+                EncryptMainText.classList.add("hidden");
+                EncryptMainButtons.classList.add("hidden");
+            }, 1000); // 1 sec delay
+        } else {
+            inputField.classList.add("hidden");
+        }
+    });
 });

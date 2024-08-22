@@ -31,13 +31,27 @@
 
     <div class="wrapper" id="encrypt">
         <div class="center-content">
-            <h1>Encrypt</h1>
+            <h1 id="encrypt-main-text">Encrypt</h1>
+            <ul class="automanual" id="encrypt-main-buttons">
+                <li><a href="#" id="automatic-btn">Automatic</a></li>
+                <li><a href="#" id="manual-btn">Manual</a></li>
+            </ul>
+            <div id="auto-input" class="hidden">
+                <input type="text" placeholder="Enter your text" />
+            </div>
+            <div id="manual-input" class="hidden">
+                <input type="text" placeholder="Enter your text" />
+            </div>
         </div>
     </div>
     
     <div class="wrapper" id="decrypt">
         <div class="center-content">
             <h1>Decrypt</h1>
+            <ul class="automanual">
+                <li><a href="#autoedecrypt">Automatic</a></li>
+                <li><a href="#manudecrypt">Manual</a></li>
+            </ul>
         </div>
     </div>
 </div>
