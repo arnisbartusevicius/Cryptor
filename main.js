@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (inputField.classList.contains("hidden")) {
             inputField.classList.remove("hidden");
             inputField.classList.add("fade-in");
+            inputField.classList.add("inputfield")
 
             // Add fade-out effect to the main text and buttons
             EncryptMainText.classList.add("fade-out");
@@ -105,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1000); // 1 sec delay
         } else {
             inputField.classList.add("hidden");
+            inputField.classList.remove("inputfield")
         }
     });
 });
@@ -123,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (inputField.classList.contains("hidden")) {
             inputField.classList.remove("hidden");
             inputField.classList.add("fade-in");
+            inputField.classList.add("inputfield")
 
             // Add fade-out effect to the main text and buttons
             EncryptMainText.classList.add("fade-out");
@@ -135,6 +138,71 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1000); // 1 sec delay
         } else {
             inputField.classList.add("hidden");
+            inputField.classList.remove("inputfield")
+        }
+    });
+});
+
+// AUTOMATIC BUTTON (DECRYPT)
+document.addEventListener("DOMContentLoaded", function () {
+    var automaticBtn = document.getElementById("automatic-btn-dc");
+    var inputField = document.getElementById("auto-input-dc");
+    var DecryptMainText = document.getElementById("decrypt-main-text");
+    var DecryptMainButtons = document.getElementById("decrypt-main-buttons");
+
+    automaticBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Toggle the visibility of the input field
+        if (inputField.classList.contains("hidden")) {
+            inputField.classList.remove("hidden");
+            inputField.classList.add("fade-in");
+            inputField.classList.add("inputfield")
+
+            // Add fade-out effect to the main text and buttons
+            DecryptMainText.classList.add("fade-out");
+            DecryptMainButtons.classList.add("fade-out");
+
+            // Wait for 1 second before adding the hidden class
+            setTimeout(function () {
+                DecryptMainText.classList.add("hidden");
+                DecryptMainButtons.classList.add("hidden");
+            }, 1000); // 1 sec delay
+        } else {
+            inputField.classList.add("hidden");
+            inputField.classList.remove("inputfield")
+        }
+    });
+});
+
+// MANUAL BUTTON (DECRYPT)
+document.addEventListener("DOMContentLoaded", function () {
+    var manualBtn = document.getElementById("manual-btn-dc");
+    var inputField = document.getElementById("manual-input-dc");
+    var DecryptMainText = document.getElementById("decrypt-main-text");
+    var DecryptMainButtons = document.getElementById("decrypt-main-buttons");
+
+    manualBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+
+        // Toggle the visibility of the input field
+        if (inputField.classList.contains("hidden")) {
+            inputField.classList.remove("hidden");
+            inputField.classList.add("fade-in");
+            inputField.classList.add("inputfield")
+
+            // Add fade-out effect to the main text and buttons
+            DecryptMainText.classList.add("fade-out");
+            DecryptMainButtons.classList.add("fade-out");
+
+            // Wait for 1 sec before adding the hidden class
+            setTimeout(function () {
+                DecryptMainText.classList.add("hidden");
+                DecryptMainButtons.classList.add("hidden");
+            }, 1000); // 1 sec delay
+        } else {
+            inputField.classList.add("hidden");
+            inputField.classList.remove("inputfield")
         }
     });
 });
